@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Untuk Sachi 🤍</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    .card {
+      background: rgba(0,0,0,0.55);
+      padding: 28px;
+      border-radius: 22px;
+      max-width: 380px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    input {
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      width: 80%;
+      text-align: center;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 12px 26px;
+      border: none;
+      border-radius: 30px;
+      background: white;
+      color: #2c5364;
+      font-size: 15px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e0e0e0;
+    }
+    .hidden {
+      display: none;
+    }
+    .heart {
+      font-size: 22px;
+    }
+    iframe {
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HALAMAN PASSWORD -->
+<div class="card" id="lock">
+  <h1>Hai 🤍</h1>
+  <p>Halaman ini cuma buat satu orang.</p>
+  <input type="password" id="pass" placeholder="masukin password">
+  <br>
+  <button onclick="unlock()">Masuk</button>
+  <p id="error" style="color:#ffb3b3;"></p>
+</div>
+
+<!-- KONTEN UTAMA -->
+<div class="card hidden" id="content">
+  <h1>Hai Sachi 🤍</h1>
+
+  <!-- LAGU -->
+  <iframe style="border-radius:12px"
+    src="https://open.spotify.com/embed/track/5XeFesFbtLpXzIVDNQP22n"
+    width="100%" height="80"
+    frameborder="0"
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+  </iframe>
+
+  <p>
+    Halaman kecil ini aku buat khusus buat kamu.<br>
+    Bukan karena aku jago ngoding,<br>
+    tapi karena aku suka kamu dengan cara<br>
+    yang sederhana tapi serius.
+  </p>
+
+  <button onclick="showText()">Klik ini ya 🤍</button>
+
+  <p id="longtext" class="hidden">
+    Kamu mungkin nggak pernah sadar,<br>
+    tapi kehadiran kamu selalu bikin segalanya
+    terasa lebih tenang.<br><br>
+
+    Cara kamu bikin aku ketawa,
+    cara kamu capek tapi tetap bertahan,
+    cara kamu jadi diri kamu sendiri —
+    semuanya aku suka.<br><br>
+
+    Aku nggak janji jadi yang paling sempurna,
+    tapi aku mau jadi orang yang tetap di sini,
+    yang tetap milih kamu,
+    bahkan di hari-hari yang nggak mudah.<br><br>
+
+    Seperti lagu ini bilang,<br>
+    <i>I wanna be yours.</i><br>
+    Aku mau jadi rumah,
+    jadi tempat kamu pulang,
+    dan jadi orang yang selalu kamu cari.<br><br>
+
+    Aku sayang kamu, love you more 🤍<br><br>
+
+    <span class="heart">❤️ ❤️ ❤️</span>
+  </p>
+</div>
+
+<script>
+  function unlock() {
+    const password = document.getElementById("pass").value;
+    if (password === "sachi") {
+      document.getElementById("lock").classList.add("hidden");
+      document.getElementById("content").classList.remove("hidden");
+    } else {
+      document.getElementById("error").innerText = "password-nya salah 🤍";
+    }
+  }
+
+  function showText() {
+    document.getElementById("longtext").classList.remove("hidden");
+  }
+</script>
+
+</body>
+</html>
+
+
+
